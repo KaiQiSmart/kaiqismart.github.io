@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>關於我們 | KAIQI Smart Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #020c1b;
+            --bg-card: #0a192f;
+            --accent: #64ffda;
+            --accent-glow: rgba(100, 255, 218, 0.3);
+            --text-bright: #e6f1ff;
+            --text-gray: #8892b0;
+            
+            --font-title: 'Orbitron', 'Noto Sans TC', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-main: 'Noto Sans TC', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.25s ease;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-gray);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* 🔷 科技感導覽列 */
+        nav {
+            background: rgba(2, 12, 27, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 0 40px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        nav a {
+            color: var(--text-bright);
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: var(--font-title);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        /* 🔷 標題漸層效果 */
+        h1 {
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            text-align: center;
+            letter-spacing: 10px;
+            margin-bottom: 80px;
+            background: linear-gradient(to right, var(--text-bright), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        /* 🔷 起源故事卡片 */
+        .story-section {
+            background: var(--bg-card);
+            padding: 50px;
+            border-radius: 4px;
+            position: relative;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.5);
+            margin-bottom: 50px;
+        }
+
+        /* 修飾邊角細節 */
+        .story-section::before {
+            content: "";
+            position: absolute;
+            top: -1px; left: -1px;
+            width: 40px; height: 40px;
+            border-top: 2px solid var(--accent);
+            border-left: 2px solid var(--accent);
+        }
+
+        .story-section h2 {
+            font-family: var(--font-title);
+            color: var(--accent);
+            font-size: 1.5rem;
+            margin-top: 0;
+            margin-bottom: 30px;
+            letter-spacing: 3px;
+        }
+
+        .story-content p {
+            font-family: var(--font-mono);
+            font-size: 1rem;
+            margin-bottom: 25px;
+            text-align: justify;
+            font-weight: 300;
+        }
+
+        .highlight {
+            color: var(--accent);
+            font-weight: 500;
+            padding: 0 2px;
+            border-bottom: 1px solid var(--accent);
+        }
+
+        /* 🔷 核心理念網格 */
+        .philosophy-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 60px;
+        }
+
+        .philosophy-item {
+            padding: 30px;
+            border: 1px solid rgba(136, 146, 176, 0.1);
+            background: rgba(10, 25, 47, 0.3);
+        }
+
+        .philosophy-item:hover {
+            border-color: var(--accent);
+            background: rgba(100, 255, 218, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .philosophy-item h3 {
+            font-family: var(--font-title);
+            color: var(--text-bright);
+            font-size: 1.1rem;
+            margin-top: 0;
+            letter-spacing: 2px;
+        }
+
+        .philosophy-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--text-gray);
+        }
+
+        /* 🔷 頁尾 */
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+            color: var(--text-gray);
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; letter-spacing: 5px; }
+            .philosophy-grid { grid-template-columns: 1fr; }
+            .story-section { padding: 30px; }
+            nav { padding: 0 20px; }
+            nav a { margin: 0 10px; font-size: 0.7rem; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <h1>About KAIQI</h1>
+
+    <section class="story-section">
+      <h2>落地：從理論到實體的橋樑</h2>
+      <div class="story-content">
+        <p>
+          KAIQI Smart Studio 的誕生，源於第一線開發現場的真實觀察。創辦人 <span class="highlight">Ryan</span> 在深耕電子產品研發的十年歲月中，見證了傳統製造業與尖端 AI 技術之間的巨大鴻溝。
+        </p>
+        <p>
+          過去，機構工程師負責硬體的強健，軟體工程師負責邏輯的運轉，而 AI 科學家則在雲端運算模型。然而，真正的技術突破往往發生在三者的交界處。我們發現，市場上不缺乏高深的理論，而是缺乏能將 <span class="highlight">「複雜機械」與「智慧演算法」完美縫合</span> 的實踐者。
+        </p>
+        <p>
+          於是，KAIQI Smart Studio 正式成立。我們集結了一群擁有十年以上研發經驗的資深工程師，致力於打破領域間的藩籬。從風扇性能的 AI 預測模型，到邊緣運算（Edge-AI）在微控制器上的精確部署，我們追求的不只是代碼的正確，更是 <span class="highlight">實體世界的解決方案</span>。
+        </p>
+        <p>
+          「鎧祺」二字，象徵著如同鎧甲般堅實的硬體結構，與引領未來的智慧技術。我們不玩虛無縹緲的術語，我們只用最專業的技術，陪著開發者與企業，完成從設計到落地的最後一哩路。
+        </p>
+      </div>
+    </section>
+
+    <div class="philosophy-grid">
+      <div class="philosophy-item">
+        <h3>跨域整合 / SYNERGY</h3>
+        <p>我們深信，唯有同時理解機械結構與軟體邏輯，才能創造出最具效率的智慧硬體。</p>
+      </div>
+      <div class="philosophy-item">
+        <h3>實踐至上 / REAL-WORLD</h3>
+        <p>模型不應只存在於論文或實驗室，能真正解決產線或生活瓶頸的技術，才是好技術。</p>
+      </div>
+    </div>
+</div>
+
+<footer>
+    &copy; 2026 KAIQI_SMART_STUDIO // ALL_RIGHTS_RESERVED
+</footer>
+
+</body>
+</html>

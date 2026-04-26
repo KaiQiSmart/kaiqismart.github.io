@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>服務項目 | KAIQI Smart Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #020c1b;
+            --bg-card: #0a192f;
+            --accent: #64ffda;
+            --accent-glow: rgba(100, 255, 218, 0.3);
+            --text-bright: #e6f1ff;
+            --text-steel: #8892b0;
+            --font-header: 'Orbitron', 'Noto Sans TC', sans-serif;
+            --font-code: 'JetBrains Mono', monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.25s ease;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-steel);
+            font-family: 'Noto Sans TC', sans-serif;
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* 🔷 導覽列 (毛玻璃效果) */
+        nav {
+            background: rgba(2, 12, 27, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 0 40px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        nav a {
+            color: var(--text-bright);
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: var(--font-header);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        h1 {
+            font-family: var(--font-header);
+            font-size: 2.8rem;
+            text-align: center;
+            letter-spacing: 10px;
+            margin-bottom: 80px;
+            background: linear-gradient(to right, var(--text-bright), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        /* 🔷 服務方式區塊 (Grid) */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            padding: 40px;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.2);
+        }
+
+        .service-card::after {
+            content: attr(data-num);
+            position: absolute;
+            top: 20px; right: 20px;
+            font-family: var(--font-header);
+            color: rgba(100, 255, 218, 0.15);
+            font-size: 1.5rem;
+        }
+
+        .service-card h3 {
+            font-family: var(--font-header);
+            color: var(--accent);
+            font-size: 1.2rem;
+            margin-top: 0;
+            margin-bottom: 20px;
+            letter-spacing: 1px;
+        }
+
+        .service-card p {
+            font-family: var(--font-code);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+            color: var(--text-steel);
+        }
+
+        /* 🔷 收費標準區塊 */
+        .pricing-section {
+            margin-top: 100px;
+            background: linear-gradient(135deg, #112240 0%, #020c1b 100%);
+            padding: 60px;
+            border-radius: 4px;
+            border: 1px solid var(--accent);
+        }
+
+        .pricing-header {
+            font-family: var(--font-header);
+            color: var(--text-bright);
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            text-align: center;
+            letter-spacing: 4px;
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        .price-item {
+            padding: 30px;
+            border-left: 2px solid var(--accent);
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .price-item h4 {
+            font-family: var(--font-header);
+            color: var(--accent);
+            margin: 0 0 15px 0;
+            font-size: 1.1rem;
+        }
+
+        .price-tag {
+            font-family: var(--font-code);
+            font-size: 1.5rem;
+            color: var(--text-bright);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .price-desc {
+            font-family: var(--font-code);
+            font-size: 0.85rem;
+            color: var(--text-steel);
+        }
+
+        /* 🔷 行動呼籲 */
+        .footer-cta {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .btn-connect {
+            font-family: var(--font-header);
+            padding: 20px 50px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            display: inline-block;
+            letter-spacing: 3px;
+            font-size: 0.9rem;
+        }
+
+        .btn-connect:hover {
+            background: rgba(100, 255, 218, 0.1);
+            box-shadow: 0 0 20px var(--accent);
+        }
+
+        @media (max-width: 768px) {
+            .pricing-grid { grid-template-columns: 1fr; }
+            h1 { font-size: 2rem; letter-spacing: 5px; }
+            .pricing-section { padding: 30px; }
+        }
+    </style>
+</head>
+<body>
+
+<nav>
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="portfolio.html">Portfolio</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<div class="container">
+    <h1>Our Services</h1>
+
+    <div class="services-grid">
+        <div class="service-card" data-num="01">
+            <h3>技術諮詢</h3>
+            <p>針對 AI 導入、硬體開發瓶頸提供專業建議。透過深度對話評估技術可行性，協助規劃最佳開發路徑。</p>
+        </div>
+        <div class="service-card" data-num="02">
+            <h3>客戶數據分析</h3>
+            <p>挖掘工業或商業數據背後的價值。利用數值統計與視覺化工具，將原始數據轉化為可執行的決策資訊。</p>
+        </div>
+        <div class="service-card" data-num="03">
+            <h3>AI Model 訓練</h3>
+            <p>客製化深度學習模型（如 1D-CNN, ResNet）。針對特定場景（如效能預測、影像識別）進行精度優化。</p>
+        </div>
+        <div class="service-card" data-num="04">
+            <h3>UI/UX 應用開發</h3>
+            <p>開發具備專業美感的自動化工具介面。確保複雜的系統操作也能擁有直觀、流暢的使用者體驗。</p>
+        </div>
+        <div class="service-card" data-num="05">
+            <h3>軟硬體整合</h3>
+            <p>打破領域藩籬，整合影像識別系統與機械作動（Ex. 自動化夾取、智能檢測），實現完整的智慧應用。</p>
+        </div>
+    </div>
+
+    <section class="pricing-section">
+        <div class="pricing-header">PRICING_MODEL</div>
+        <div class="pricing-grid">
+            <div class="price-item">
+                <h4>技術諮詢</h4>
+                <span class="price-tag">$0 / Limited Free</span>
+                <p class="price-desc">限時免費。旨在推廣 AI 落地化與異業技術交流，共同探索轉型可能。</p>
+            </div>
+            <div class="price-item">
+                <h4>開發服務</h4>
+                <span class="price-tag">Project Based</span>
+                <p class="price-desc">依專案範疇與開發階段另行報價（含模型訓練、系統整合等）。</p>
+            </div>
+        </div>
+    </section>
+
+    <div class="footer-cta">
+        <a href="contact.html" class="btn-connect">INITIATE_PROJECT // 開始合作</a>
+    </div>
+</div>
+
+<footer style="text-align:center; padding: 100px 0; font-family: var(--font-code); font-size: 0.8rem;">
+    &copy; 2026 KAIQI_SMART_STUDIO // ALL_RIGHTS_RESERVED
+</footer>
+
+</body>
+</html>
