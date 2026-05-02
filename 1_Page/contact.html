@@ -1,105 +1,285 @@
 <!DOCTYPE html>
 <html lang="zh-Hant">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>聯絡我們 | KaiQi Smart Studio</title>
-  <style>
-    * {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      font-family: "Noto Sans TC", Arial, sans-serif;
-      background-color: #f4f9ff;
-      color: #204080;
-    }
-    nav {
-      background-color: #204080;
-      padding: 16px 40px;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-      margin: 8px 15px;
-      font-weight: bold;
-      font-size: 1rem;
-    }
-    nav a:hover {
-      text-decoration: underline;
-    }
-    .container {
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 40px 20px;
-      text-align: center;
-    }
-    h1 {
-      font-size: 2.2rem;
-      margin-bottom: 10px;
-      color: #2a6ebb;
-    }
-    h2 {
-      font-size: 1.2rem;
-      color: #204080;
-      margin-bottom: 30px;
-    }
-    .contact-info {
-      font-size: 1.2rem;
-      color: #333;
-    }
-    .contact-info a {
-      color: #2a6ebb;
-      text-decoration: none;
-    }
-    footer {
-      background: #eef4ff;
-      text-align: center;
-      padding: 30px 20px;
-      color: #555;
-      font-size: 0.95rem;
-      margin-top: 60px;
-    }
-    @media (max-width: 600px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-      nav a {
-        margin: 6px 0;
-      }
-    }
-  </style>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>聯繫我們 | KAIQI Smart Studio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-deep: #020c1b;
+            --bg-card: #0a192f;
+            --accent: #64ffda;
+            --accent-glow: rgba(100, 255, 218, 0.3);
+            --text-bright: #e6f1ff;
+            --text-gray: #8892b0;
+            --font-title: 'Orbitron', 'Noto Sans TC', sans-serif;
+            --font-mono: 'JetBrains Mono', monospace;
+            --font-main: 'Noto Sans TC', sans-serif;
+        }
+
+        * {
+            box-sizing: border-box;
+            transition: all 0.25s ease;
+        }
+
+        body {
+            margin: 0;
+            background-color: var(--bg-deep);
+            color: var(--text-gray);
+            font-family: var(--font-main);
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+
+        /* 🔷 Tech-Navbar */
+        nav {
+            background: rgba(2, 12, 27, 0.85);
+            backdrop-filter: blur(10px);
+            padding: 0 40px;
+            height: 80px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        nav a {
+            color: var(--text-bright);
+            text-decoration: none;
+            margin: 0 20px;
+            font-family: var(--font-title);
+            font-size: 0.8rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+            text-shadow: 0 0 8px var(--accent);
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 80px 20px;
+        }
+
+        h1 {
+            font-family: var(--font-title);
+            font-size: 2.8rem;
+            text-align: center;
+            letter-spacing: 10px;
+            margin-bottom: 20px;
+            background: linear-gradient(to right, var(--text-bright), var(--accent));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            color: transparent;
+        }
+
+        .page-desc {
+            text-align: center;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            margin-bottom: 80px;
+            letter-spacing: 1px;
+        }
+
+        /* 🔷 Terminal Style Contact Section */
+        .contact-section {
+            background: var(--bg-card);
+            border-radius: 4px;
+            position: relative;
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.5);
+            overflow: hidden;
+        }
+
+        .terminal-header {
+            background: rgba(100, 255, 218, 0.05);
+            padding: 12px 20px;
+            display: flex;
+            gap: 8px;
+            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .dot { width: 12px; height: 12px; border-radius: 50%; background: #ff5f56; }
+        .dot:nth-child(2) { background: #ffbd2e; }
+        .dot:nth-child(3) { background: #27c93f; }
+
+        .contact-content {
+            padding: 50px;
+        }
+
+        .contact-info-item {
+            margin-bottom: 40px;
+        }
+
+        .contact-info-item h2 {
+            font-family: var(--font-title);
+            color: var(--accent);
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+            letter-spacing: 2px;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info-item h2::before {
+            content: "> ";
+            font-family: var(--font-mono);
+            margin-right: 10px;
+        }
+
+        .contact-link {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--text-bright);
+            text-decoration: none;
+            word-break: break-all;
+            padding-left: 25px;
+            display: block;
+        }
+
+        .contact-link:hover {
+            color: var(--accent);
+            transform: translateX(10px);
+        }
+
+        /* 🔷 Call to Action Box */
+        .cta-box {
+            text-align: center;
+            margin-top: 60px;
+            padding: 40px;
+            border: 1px dashed var(--accent);
+            background: rgba(100, 255, 218, 0.02);
+        }
+
+        .cta-box h3 {
+            font-family: var(--font-title);
+            color: var(--text-bright);
+            margin-bottom: 20px;
+        }
+
+        .cta-box p {
+            font-size: 0.9rem;
+            margin-bottom: 30px;
+            color: var(--text-gray);
+        }
+
+        .email-btn {
+            display: inline-block;
+            padding: 15px 30px;
+            border: 1px solid var(--accent);
+            color: var(--accent);
+            text-decoration: none;
+            font-family: var(--font-title);
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            background: transparent;
+        }
+
+        .email-btn:hover {
+            background: var(--accent-glow);
+            box-shadow: 0 0 20px var(--accent-glow);
+        }
+
+        footer {
+            text-align: center;
+            padding: 80px 20px;
+            border-top: 1px solid rgba(100, 255, 218, 0.1);
+        }
+
+        .copyright-container {
+            display: block;
+            line-height: 2;
+            letter-spacing: 2px;
+            font-family: var(--font-mono);
+            color: var(--text-gray);
+        }
+
+        .copyright-main {
+            font-size: 0.9rem;
+        }
+
+        .copyright-sub {
+            font-size: 0.75rem;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 2rem; }
+            .contact-content { padding: 30px; }
+            .contact-link { font-size: 1rem; }
+        }
+    </style>
 </head>
 <body>
 
-<!-- 🔷 導覽列 -->
 <nav>
-  <a href="index.html">首頁</a>
-  <a href="about.html">關於我們</a>
-  <a href="services.html">服務項目</a>
-  <a href="pricing.html">服務方案</a>
-  <a href="portfolio.html">作品案例</a>
-  <a href="news.html">最新消息</a>
-  <a href="contact.html">聯絡我們</a>
+    <a href="../index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="services.html">Services</a>
+    <a href="cases.html">Cases</a>
+    <a href="contact.html">Contact</a>
 </nav>
 
-<!-- 🔷 內容區 -->
 <div class="container">
-  <h1>聯絡我們</h1>
-  <h2>歡迎來信諮詢或合作洽談</h2>
-  <div class="contact-info">
-    📧 電子信箱：<a href="mailto:kaiqismart@gmail.com">kaiqismart@gmail.com</a>
-  </div>
+    <h1>Contact KAIQI</h1>
+    <p class="page-desc">// 建立連結：啟動您的智慧轉型專案</p>
+
+    <section class="contact-section">
+        <div class="terminal-header">
+            <div class="dot"></div>
+            <div class="dot"></div>
+            <div class="dot"></div>
+        </div>
+        
+        <div class="contact-content">
+            <!-- Email -->
+            <div class="contact-info-item">
+                <h2>System_Email</h2>
+                <a href="mailto:kaiqismart@gmail.com" class="contact-link">
+                    kaiqismart@gmail.com
+                </a>
+            </div>
+
+            <!-- Web Interface -->
+            <div class="contact-info-item">
+                <h2>Web_Interface</h2>
+                <a href="https://kaiqismart.github.io/" target="_blank" class="contact-link">
+                    kaiqismart.github.io
+                </a>
+            </div>
+
+            <!-- Phone -->
+            <div class="contact-info-item">
+                <h2>Mobile_Terminal</h2>
+                <a href="tel:+886932603741" class="contact-link">
+                    +886 932-603-741
+                </a>
+            </div>
+
+        </div>
+    </section>
+
+    <div class="cta-box">
+        <h3>Ready to initiate a project?</h3>
+        <p>無論是 AI 模型部署、自動化機械設計，或是跨領域系統整合，我們隨時準備好進行技術探討。</p>
+        <a href="mailto:kaiqismart@gmail.com" class="email-btn">INITIALIZE CONNECTION</a>
+    </div>
 </div>
 
-<!-- 🔷 頁尾 -->
 <footer>
-  &copy; 2025 鎧祺智能設計 KaiQi Smart Studio. All rights reserved.<br />
-  諮詢專線：<a href="tel:0932603741">0932-603-741</a>
+    <div class="copyright-container">
+        <div class="copyright-main">&copy; 2026 KAIQI SMART STUDIO</div>
+        <div class="copyright-sub">ALL RIGHTS RESERVED</div>
+    </div>
 </footer>
 
 </body>

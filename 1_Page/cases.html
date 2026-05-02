@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>作品案例 | KAIQI Smart Studio</title>
+    <title>Case Studies | KAIQI Smart Studio</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 配色系統：延續首頁與關於頁面 */
-            --bg-deep: #020c1b;      /* 極深墨色 */
-            --bg-card: #0a192f;      /* 卡片深藍 */
-            --accent: #64ffda;       /* 電弧青高亮 */
+            /* Color System */
+            --bg-deep: #020c1b;
+            --bg-card: #0a192f;
+            --accent: #64ffda;
             --accent-glow: rgba(100, 255, 218, 0.3);
-            --text-bright: #e6f1ff;  /* 亮銀白文字 */
-            --text-steel: #8892b0;   /* 鋼鐵灰文字 */
+            --text-bright: #e6f1ff;
+            --text-steel: #8892b0;
             
-            /* 字體配置 */
+            /* Typography */
             --font-header: 'Orbitron', 'Noto Sans TC', sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
             --font-main: 'Noto Sans TC', sans-serif;
@@ -35,7 +35,7 @@
             overflow-x: hidden;
         }
 
-        /* 🔷 科技感導覽列 */
+        /* 🔷 Tech-Style Navigation */
         nav {
             background: rgba(2, 12, 27, 0.85);
             backdrop-filter: blur(10px);
@@ -71,7 +71,7 @@
             padding: 80px 20px;
         }
 
-        /* 🔷 大標題漸層效果 */
+        /* 🔷 Gradient Header */
         h1 {
             font-family: var(--font-header);
             font-size: 2.8rem;
@@ -95,14 +95,14 @@
             letter-spacing: 1px;
         }
 
-        /* 🔷 作品展示網格 */
-        .portfolio-grid {
+        /* 🔷 Case Grid */
+        .case-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
             gap: 40px;
         }
 
-        .portfolio-item {
+        .case-item {
             background: var(--bg-card);
             border-radius: 4px;
             border: 1px solid rgba(100, 255, 218, 0.1);
@@ -111,13 +111,12 @@
             box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.7);
         }
 
-        .portfolio-item:hover {
+        .case-item:hover {
             border-color: var(--accent);
             transform: translateY(-5px);
             box-shadow: 0 20px 30px -15px rgba(100, 255, 218, 0.2);
         }
 
-        /* 圖片容器 */
         .item-image {
             width: 100%;
             height: 220px;
@@ -129,7 +128,6 @@
             border-bottom: 1px solid rgba(100, 255, 218, 0.1);
         }
 
-        /* 圖片濾鏡與懸停效果 */
         .item-image img {
             width: 100%;
             height: 100%;
@@ -138,17 +136,16 @@
             opacity: 0.8;
         }
 
-        .portfolio-item:hover .item-image img {
+        .case-item:hover .item-image img {
             filter: grayscale(0%) contrast(1);
             opacity: 1;
         }
 
-        /* 作品文字內容 */
         .item-content {
             padding: 30px;
         }
 
-        .item-category {
+        .item-label {
             font-family: var(--font-mono);
             color: var(--accent);
             font-size: 0.75rem;
@@ -174,7 +171,6 @@
             text-align: justify;
         }
 
-        /* 🔷 技術標籤 */
         .tech-stack {
             display: flex;
             flex-wrap: wrap;
@@ -204,7 +200,7 @@
 
         @media (max-width: 768px) {
             h1 { font-size: 2rem; letter-spacing: 5px; }
-            .portfolio-grid { grid-template-columns: 1fr; }
+            .case-grid { grid-template-columns: 1fr; }
             nav a { margin: 0 10px; font-size: 0.7rem; }
         }
     </style>
@@ -215,41 +211,45 @@
     <a href="../index.html">Home</a>
     <a href="about.html">About</a>
     <a href="services.html">Services</a>
-    <a href="portfolio.html">Portfolio</a>
+    <!-- Updated navigation label -->
+    <a href="cases.html">Cases</a>
     <a href="contact.html">Contact</a>
 </nav>
 
 <div class="container">
-    <h1>Project Showcase</h1>
-    <p class="page-desc">// 技術實踐紀錄：從數值模擬到智慧應用</p>
+    <!-- Updated Page Header -->
+    <h1>Case Studies</h1>
+    <p class="page-desc">技術實踐紀錄：從數值模擬到智慧應用</p>
 
-    <div class="portfolio-grid">
+    <div class="case-grid">
         
-        <div class="portfolio-item">
+        <!-- Case 01 -->
+        <div class="case-item">
             <div class="item-image">
-                <img src="../3_Source/portfolio1.png" alt="AI Prediction" />
+                <img src="../3_Source/Case1.png" alt="AI Prediction" />
             </div>
             <div class="item-content">
-                <span class="item-category">Data Science / AI</span>
-                <h3>流體機械性能 AI 預測系統</h3>
+                <span class="item-label">Case 01: Data Science / AI</span>
+                <h3>AI 流體性能預測系統</h3>
                 <p>
                     運用深度學習模型 (如 1D-CNN, ResNet)，將耗時的數值模擬（CFD）過程轉化為秒級預測引擎。針對特定動力幾何參數，精確預測其流體特性曲線，大幅縮短 R&D 開發週期與成本。
                 </p>
                 <div class="tech-stack">
                     <span class="tech-tag">Python</span>
-                    <span class="tech-tag">TensorFlow</span>
+                    <span class="tech-tag">PyTorch</span>
                     <span class="tech-tag">Tkinter (GUI)</span>
                     <span class="tech-tag">CFD Data</span>
                 </div>
             </div>
         </div>
 
-        <div class="portfolio-item">
+        <!-- Case 02 -->
+        <div class="case-item">
             <div class="item-image">
-                <img src="../3_Source/portfolio2.png" alt="Edge AI Recognition" />
+                <img src="../3_Source/Case2.png" alt="Edge AI Recognition" />
             </div>
             <div class="item-content">
-                <span class="item-category">Embedded System / AI</span>
+                <span class="item-label">Case 02: Embedded System / AI</span>
                 <h3>嵌入式影像辨識與整合技術</h3>
                 <p>
                     完成從 AI 模型訓練到邊緣運算硬體 (如微控制器) 的部署流程。優化輕量化模型 (TensorFlow Lite)，實現即時影像識別與機械作動整合，適用於智慧檢測與流體機械狀態監測場景。
@@ -263,12 +263,13 @@
             </div>
         </div>
 
-        <div class="portfolio-item">
+        <!-- Case 03 -->
+        <div class="case-item">
             <div class="item-image">
-                <img src="../3_Source/portfolio3.png" alt="Industrial Monitor Platform" />
+                <img src="../3_Source/Case3.png" alt="Industrial Monitor Platform" />
             </div>
             <div class="item-content">
-                <span class="item-category">Software Integration / IoT</span>
+                <span class="item-label">Case 03: Software Integration / IoT</span>
                 <h3>工業智慧監控與分析整合平台</h3>
                 <p>
                     客製化開發跨平台軟體與 GUI 介面，垂直整合 AI 性能預測模型、前端硬體傳感器數據 (IoT) 與數據庫系統。提供使用者直觀的設備監控、數據分析與性能預測視覺化看板。
@@ -285,8 +286,11 @@
     </div>
 </div>
 
-<footer>
-    &copy; 2026 KAIQI_SMART_STUDIO // TECH_LOG_V1.1
+<footer style="text-align: center;">
+    <div style="display: block; line-height: 2; letter-spacing: 2px; font-family: var(--font-code);">
+        <div>&copy; 2026 KAIQI SMART STUDIO</div>
+        <div style="font-size: 0.75rem; opacity: 0.8;">ALL RIGHTS RESERVED</div>
+    </div>
 </footer>
 
 </body>

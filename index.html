@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>鎧祺智能設計 | KaiQi Smart Studio</title>
+    <title>鎧祺智能設計 | KAIQI Smart Studio</title>
     <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&family=JetBrains+Mono:wght@300;500&family=Noto+Sans+TC:wght@300;500;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            /* 重新定義極簡高對比配色 */
-            --bg-deep: #020c1b;      /* 極深墨色背景 */
-            --bg-card: #0a192f;      /* 深藍卡片背景 */
-            --accent: #64ffda;       /* 電弧青高亮 */
+            /* Minimalist high-contrast color scheme */
+            --bg-deep: #020c1b;      /* Deep ink background */
+            --bg-card: #0a192f;      /* Dark blue card background */
+            --accent: #64ffda;       /* Electric cyan highlight */
             --accent-glow: rgba(100, 255, 218, 0.3);
-            --text-silver: #e6f1ff;  /* 亮銀白文字 */
-            --text-steel: #8892b0;   /* 鋼鐵灰文字 */
+            --text-silver: #e6f1ff;  /* Bright silver text */
+            --text-steel: #8892b0;   /* Steel gray text */
             
-            /* 字體配置 */
+            /* Font configurations */
             --font-header: 'Orbitron', 'Noto Sans TC', sans-serif;
             --font-code: 'JetBrains Mono', monospace;
             --font-body: 'Noto Sans TC', sans-serif;
@@ -36,7 +36,7 @@
             font-weight: 300;
         }
 
-        /* 🔷 現代化透明導覽列 */
+        /* Modern transparent navigation bar */
         nav {
             background: rgba(2, 12, 27, 0.85);
             backdrop-filter: blur(10px);
@@ -65,7 +65,7 @@
             text-shadow: 0 0 8px var(--accent);
         }
 
-        /* 🔷 Hero 主視覺區 */
+        /* Hero section */
         .hero {
             padding: 120px 20px;
             text-align: center;
@@ -83,13 +83,13 @@
             font-family: var(--font-header);
             font-size: 3.5rem;
             margin: 0;
-            letter-spacing: 12px; /* 拉大字距增加高級感 */
+            letter-spacing: 12px;
             font-weight: 700;
             background: linear-gradient(to right, var(--text-silver), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            color: transparent; /* 確保漸層露出 */
+            color: transparent;
         }
 
         .brand-sub {
@@ -104,7 +104,7 @@
 
         .hero-desc {
             font-family: var(--font-code);
-            max-width: 750px;
+            max-width: 800px;
             margin: 50px auto;
             font-size: 0.95rem;
             color: var(--text-steel);
@@ -112,7 +112,7 @@
             letter-spacing: 0.5px;
         }
 
-        /* 🔷 專業服務卡片 */
+        /* Professional services grid */
         .container {
             max-width: 1100px;
             margin: 0 auto;
@@ -161,13 +161,14 @@
         }
 
         .service-card p {
-            font-family: var(--font-code);
+            font-family: var(--font-body);
             color: var(--text-steel);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             line-height: 1.8;
+            text-align: justify;
         }
 
-        /* 🔷 技術諮詢區塊 (高對比終端風) */
+        /* Technical Consultation Box (Terminal style) */
         .cta-box {
             margin: 100px 0;
             background: linear-gradient(135deg, #112240 0%, #020c1b 100%);
@@ -189,9 +190,10 @@
         .cta-box p {
             font-family: var(--font-code);
             color: var(--text-steel);
-            max-width: 700px;
+            max-width: 750px;
             margin: 0 auto 40px;
             font-size: 1rem;
+            line-height: 1.8;
         }
 
         .btn {
@@ -212,7 +214,7 @@
             box-shadow: 0 0 15px var(--accent);
         }
 
-        /* 🔷 頁尾終端機風格 */
+        /* Footer section */
         footer {
             border-top: 1px solid rgba(100, 255, 218, 0.1);
             padding: 80px 20px;
@@ -247,53 +249,59 @@
     <a href="index.html">Home</a>
     <a href="1_Page/about.html">About</a>
     <a href="1_Page/services.html">Services</a>
-    <a href="1_Page/portfolio.html">Portfolio</a>
-    
+    <a href="1_Page/cases.html">Cases</a>
     <a href="1_Page/contact.html">Contact</a>
 </nav>
 
 <section class="hero">
-    <img src="3_Source/logo.png" alt="KaiQi Smart Studio" class="logo" />
+    <!-- Place logo file in 3_Source/logo.png -->
+    <img src="3_Source/logo.png" alt="KAIQI Smart Studio" class="logo" />
     <h1>鎧祺智能設計</h1>
-    <div class="brand-sub">KaiQi Smart Studio</div>
+    <div class="brand-sub">KAIQI Smart Studio</div>
     <div class="hero-desc">
-        KAIQI Smart Studio 是一個跨足「機械、軟體與 AI」的技術實踐工作室。<br>
-        專長於將複雜技術轉化為直觀解決方案，提供從構想設計到實體落地的完整支援。
+        跨足 AI 技術、軟體開發與軟硬體整合的技術實踐工作室。<br>
+        我們不玩虛無縹緲的術語，只用最專業的技術解決您最真實的難題。<br>
+        從設計到落地，為企業自動化與個人開發者提供完整支援。
     </div>
 </section>
 
 <div class="container">
     <div class="services-grid">
-        <div class="service-card">
-            <h3>智慧硬體整合</h3>
-            <p>融合機構設計與軟硬體協調，應用影像辨識技術。專業整合機械結構與電控系統，確保硬體在真實環境中穩定運行。</p>
-        </div>
-        <div class="service-card">
-            <h3>軟體與數據</h3>
-            <p>開發直觀的 UI/UX 應用程式並進行深度數據分析。將開發過程中的原始數據轉化為具備洞察力的視覺化工具。</p>
-        </div>
+        <!-- Service 1: AI Implementation -->
         <div class="service-card">
             <h3>AI 落地實踐</h3>
-            <p>專注於模型訓練與邊緣運算 (Edge-AI) 部署。我們拒絕虛浮術語，堅持用專業技術解決最真實的工程難題。</p>
+            <p>專注於從模型訓練到邊緣運算（Edge-AI）的部署。我們致力於將最前沿的 AI 算法轉化為穩定、高效的生產力工具。</p>
+        </div>
+        
+        <!-- Service 2: Software & Data -->
+        <div class="service-card">
+            <h3>軟體與數據</h3>
+            <p>提供直觀的 UI/UX 應用程式開發與深度數據分析。透過優質的介面設計與數據洞察，協助客戶在數位轉型中取得先機。</p>
+        </div>
+        
+        <!-- Service 3: Hardware Integration -->
+        <div class="service-card">
+            <h3>智慧硬體整合</h3>
+            <p>涵蓋機電整合、軟硬體協調與影像辨識應用。擅長跨領域技術對接，確保複雜的硬體系統與軟體邏輯完美契合。</p>
         </div>
     </div>
 
+    <!-- Call to Action Section -->
     <div class="cta-box">
-        <h3>技術交流 // START_PROJECT</h3>
+        <h3>技術交流 // START_CONSULTATION</h3>
         <p>
-            為了推廣 AI 與自動化技術，我目前提供免費技術諮詢服務。
-            無論您是有創意的個人開發者或轉型中的企業，歡迎聯繫我們，一起評估最可行的技術路徑。
+            為了推廣 AI 與自動化技術，我目前提供免費技術諮詢服務。<br>
+            無論是企業轉型瓶頸或個人的創意發想，歡迎直接聯繫，讓我們一起評估最可行的開發路徑。
         </p>
         <a href="1_Page/contact.html" class="btn">立即聯繫 // CONNECT</a>
     </div>
 </div>
 
-<footer>
-    <div class="footer-info">
-        📩 <a href="mailto:kaiqismart@gmail.com">kaiqismart@gmail.com</a>
-        📞 <a href="tel:0932603741">0932-603-741</a>
+<footer style="text-align: center;">
+    <div style="display: block; line-height: 2; letter-spacing: 2px; font-family: var(--font-code);">
+        <div>&copy; 2026 KAIQI SMART STUDIO</div>
+        <div style="font-size: 0.75rem; opacity: 0.8;">ALL RIGHTS RESERVED</div>
     </div>
-    &copy; 2026 KAIQI_SMART_STUDIO // ALL_RIGHTS_RESERVED
 </footer>
 
 </body>
