@@ -32,7 +32,6 @@
             overflow-x: hidden;
         }
 
-        /* 🔷 Tech-Navbar */
         nav {
             background: rgba(2, 12, 27, 0.85);
             backdrop-filter: blur(10px);
@@ -63,7 +62,7 @@
         }
 
         .container {
-            max-width: 900px;
+            max-width: 1000px;
             margin: 0 auto;
             padding: 80px 20px;
         }
@@ -86,107 +85,99 @@
             font-family: var(--font-mono);
             font-size: 0.9rem;
             color: var(--text-gray);
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             letter-spacing: 1px;
         }
 
-        /* 🔷 Terminal Style Contact Section */
-        .contact-section {
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 60px;
+        }
+
+        .form-card {
             background: var(--bg-card);
             border-radius: 4px;
-            position: relative;
-            border: 1px solid rgba(100, 255, 218, 0.1);
-            box-shadow: 0 20px 30px -15px rgba(2, 12, 27, 0.5);
-            overflow: hidden;
-        }
-
-        .terminal-header {
-            background: rgba(100, 255, 218, 0.05);
-            padding: 12px 20px;
-            display: flex;
-            gap: 8px;
-            border-bottom: 1px solid rgba(100, 255, 218, 0.1);
-        }
-
-        .dot { width: 12px; height: 12px; border-radius: 50%; background: #ff5f56; }
-        .dot:nth-child(2) { background: #ffbd2e; }
-        .dot:nth-child(3) { background: #27c93f; }
-
-        .contact-content {
-            padding: 50px;
-        }
-
-        .contact-info-item {
-            margin-bottom: 40px;
-        }
-
-        .contact-info-item h2 {
-            font-family: var(--font-title);
-            color: var(--accent);
-            font-size: 1.1rem;
-            margin-bottom: 15px;
-            letter-spacing: 2px;
-            display: flex;
-            align-items: center;
-        }
-
-        .contact-info-item h2::before {
-            content: "> ";
-            font-family: var(--font-mono);
-            margin-right: 10px;
-        }
-
-        .contact-link {
-            font-family: var(--font-mono);
-            font-size: 1.1rem;
-            color: var(--text-bright);
-            text-decoration: none;
-            word-break: break-all;
-            padding-left: 25px;
-            display: block;
-        }
-
-        .contact-link:hover {
-            color: var(--accent);
-            transform: translateX(10px);
-        }
-
-        /* 🔷 Call to Action Box */
-        .cta-box {
-            text-align: center;
-            margin-top: 60px;
             padding: 40px;
-            border: 1px dashed var(--accent);
-            background: rgba(100, 255, 218, 0.02);
+            border: 1px solid rgba(100, 255, 218, 0.1);
+            box-shadow: 0 10px 30px -15px rgba(2, 12, 27, 0.5);
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
         }
 
-        .cta-box h3 {
+        .form-card:hover {
+            border-color: var(--accent);
+            transform: translateY(-5px);
+        }
+
+        .form-card h2 {
             font-family: var(--font-title);
-            color: var(--text-bright);
+            color: var(--accent);
+            font-size: 1.3rem;
             margin-bottom: 20px;
+            letter-spacing: 1px;
         }
 
-        .cta-box p {
+        .form-card p {
             font-size: 0.9rem;
             margin-bottom: 30px;
             color: var(--text-gray);
+            min-height: 50px;
         }
 
-        .email-btn {
+        .btn-form {
             display: inline-block;
-            padding: 15px 30px;
+            padding: 14px 20px;
             border: 1px solid var(--accent);
             color: var(--accent);
             text-decoration: none;
-            font-family: var(--font-title);
-            font-size: 0.9rem;
-            letter-spacing: 2px;
+            font-family: var(--font-mono);
+            font-size: 0.85rem;
+            text-align: center;
             background: transparent;
         }
 
-        .email-btn:hover {
+        .btn-form:hover {
             background: var(--accent-glow);
-            box-shadow: 0 0 20px var(--accent-glow);
+            box-shadow: 0 0 15px var(--accent-glow);
+        }
+
+        /* 🔷 更新後的聯繫資訊區塊 */
+        .contact-section {
+            background: rgba(10, 25, 47, 0.5);
+            border-radius: 4px;
+            border: 1px solid rgba(100, 255, 218, 0.05);
+            padding: 40px;
+            text-align: center;
+        }
+
+        .contact-list {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 40px;
+        }
+
+        .contact-item h3 {
+            font-family: var(--font-main);
+            font-size: 0.85rem;
+            font-weight: 700;
+            color: var(--accent);
+            margin-bottom: 12px;
+            letter-spacing: 2px;
+        }
+
+        .contact-item a {
+            color: var(--text-bright);
+            text-decoration: none;
+            font-family: var(--font-mono);
+            font-size: 1.05rem;
+        }
+
+        .contact-item a:hover {
+            color: var(--accent);
         }
 
         footer {
@@ -203,19 +194,10 @@
             color: var(--text-gray);
         }
 
-        .copyright-main {
-            font-size: 0.9rem;
-        }
-
-        .copyright-sub {
-            font-size: 0.75rem;
-            opacity: 0.7;
-        }
-
         @media (max-width: 768px) {
             h1 { font-size: 2rem; }
-            .contact-content { padding: 30px; }
-            .contact-link { font-size: 1rem; }
+            .form-grid { grid-template-columns: 1fr; }
+            .contact-list { flex-direction: column; gap: 30px; }
         }
     </style>
 </head>
@@ -230,55 +212,52 @@
 </nav>
 
 <div class="container">
-    <h1>Contact KAIQI</h1>
-    <p class="page-desc">// 建立連結：啟動您的智慧轉型專案</p>
+    <h1>INITIALIZE_CONNECTION</h1>
+    <p class="page-desc">// 選擇您的聯繫路徑，啟動智慧轉型專案</p>
 
-    <section class="contact-section">
-        <div class="terminal-header">
-            <div class="dot"></div>
-            <div class="dot"></div>
-            <div class="dot"></div>
+    <div class="form-grid">
+        <!-- 表單 1: 諮詢預約單 -->
+        <div class="form-card">
+            <div>
+                <h2>諮詢預約單</h2>
+                <p>適合初步交流。如果您有轉型構想但尚無具體技術參數，請由此預約對話。</p>
+            </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSdI_r0LWU1ps8VkFDxvLkgHW3vy5xC3iMHRnGqpnyDFYA0bbQ/viewform?usp=sf_link" target="_blank" class="btn-form">RESERVE_CONSULT // 預約</a>
         </div>
-        
-        <div class="contact-content">
-            <!-- Email -->
-            <div class="contact-info-item">
-                <h2>System_Email</h2>
-                <a href="mailto:kaiqismart@gmail.com" class="contact-link">
-                    kaiqismart@gmail.com
-                </a>
-            </div>
 
-            <!-- Web Interface -->
-            <div class="contact-info-item">
-                <h2>Web_Interface</h2>
-                <a href="https://kaiqismart.github.io/" target="_blank" class="contact-link">
-                    kaiqismart.github.io
-                </a>
+        <!-- 表單 2: 開發評估表 -->
+        <div class="form-card" style="border-bottom: 2px solid var(--accent);">
+            <div>
+                <h2>開發評估表</h2>
+                <p>適合具體專案。若已有現成數據、圖檔或明確需求指標，請由此提交詳細資訊。</p>
             </div>
+            <a href="https://docs.google.com/forms/d/e/1FAIpQLSf4ob_f1kpet1FjuH83isXjmjOvX6X-MWIlv6w1ZL3vBjxApQ/viewform?usp=sf_link" target="_blank" class="btn-form" style="background: rgba(100, 255, 218, 0.05);">START_EVAL // 啟動評估</a>
+        </div>
+    </div>
 
-            <!-- Phone -->
-            <div class="contact-info-item">
-                <h2>Mobile_Terminal</h2>
-                <a href="tel:+886932603741" class="contact-link">
-                    +886 932-603-741
-                </a>
+    <!-- 🔷 調整順序後的聯繫資訊區 -->
+    <section class="contact-section">
+        <div class="contact-list">
+            <div class="contact-item">
+                <h3>官方網站</h3>
+                <a href="https://kaiqismart.github.io/" target="_blank">kaiqismart.github.io</a>
             </div>
-
+            <div class="contact-item">
+                <h3>聯絡信箱</h3>
+                <a href="mailto:kaiqismart@gmail.com">kaiqismart@gmail.com</a>
+            </div>
+            <div class="contact-item">
+                <h3>諮詢專線</h3>
+                <a href="tel:+886932603741">+886 932-603-741</a>
+            </div>
         </div>
     </section>
-
-    <div class="cta-box">
-        <h3>Ready to initiate a project?</h3>
-        <p>無論是 AI 模型部署、自動化機械設計，或是跨領域系統整合，我們隨時準備好進行技術探討。</p>
-        <a href="mailto:kaiqismart@gmail.com" class="email-btn">INITIALIZE CONNECTION</a>
-    </div>
 </div>
 
 <footer>
     <div class="copyright-container">
         <div class="copyright-main">&copy; 2026 KAIQI SMART STUDIO</div>
-        <div class="copyright-sub">ALL RIGHTS RESERVED</div>
+        <div class="copyright-sub">ALL RIGHTS RESERVED </div>
     </div>
 </footer>
 
