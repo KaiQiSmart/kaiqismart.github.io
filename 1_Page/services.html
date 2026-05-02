@@ -31,7 +31,6 @@
             overflow-x: hidden;
         }
 
-        /* 🔷 導覽列 (毛玻璃效果) */
         nav {
             background: rgba(2, 12, 27, 0.85);
             backdrop-filter: blur(10px);
@@ -64,7 +63,7 @@
         .container {
             max-width: 1100px;
             margin: 0 auto;
-            padding: 100px 20px;
+            padding: 80px 20px;
         }
 
         h1 {
@@ -72,25 +71,24 @@
             font-size: 2.8rem;
             text-align: center;
             letter-spacing: 10px;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
             background: linear-gradient(to right, var(--text-bright), var(--accent));
             -webkit-background-clip: text;
             background-clip: text;
             -webkit-text-fill-color: transparent;
-            color: transparent;
         }
 
-        /* 🔷 服務方式區塊 (Grid) */
+        /* 🔷 服務網格 */
         .services-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
+            gap: 25px;
             margin-bottom: 80px;
         }
 
         .service-card {
             background: var(--bg-card);
-            padding: 40px;
+            padding: 35px;
             border: 1px solid rgba(100, 255, 218, 0.1);
             position: relative;
         }
@@ -98,111 +96,116 @@
         .service-card:hover {
             border-color: var(--accent);
             transform: translateY(-5px);
-            box-shadow: 0 10px 30px -15px rgba(100, 255, 218, 0.2);
-        }
-
-        .service-card::after {
-            content: attr(data-num);
-            position: absolute;
-            top: 20px; right: 20px;
-            font-family: var(--font-header);
-            color: rgba(100, 255, 218, 0.15);
-            font-size: 1.5rem;
         }
 
         .service-card h3 {
             font-family: var(--font-header);
             color: var(--accent);
             font-size: 1.2rem;
-            margin-top: 0;
-            margin-bottom: 20px;
-            letter-spacing: 1px;
+            margin-bottom: 15px;
         }
 
         .service-card p {
-            font-family: var(--font-code);
             font-size: 0.9rem;
-            margin-bottom: 0;
-            color: var(--text-steel);
+            margin: 0;
         }
 
-        /* 🔷 收費標準區塊 */
+        /* 🔷 架構圖區塊 */
+        .arch-diagram {
+            margin: 60px 0;
+            text-align: center;
+            background: rgba(10, 25, 47, 0.5);
+            padding: 40px;
+            border-radius: 4px;
+            border: 1px solid rgba(100, 255, 218, 0.05);
+        }
+
+        .arch-diagram img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 4px;
+            filter: drop-shadow(0 0 10px rgba(100, 255, 218, 0.1));
+        }
+
+        .arch-tag {
+            font-family: var(--font-code);
+            font-size: 0.75rem;
+            color: var(--accent);
+            margin-top: 20px;
+            display: block;
+        }
+
+        /* 🔷 收費標準 (優化版) */
         .pricing-section {
             margin-top: 100px;
             background: linear-gradient(135deg, #112240 0%, #020c1b 100%);
-            padding: 60px;
-            border-radius: 4px;
+            padding: 60px 40px;
             border: 1px solid var(--accent);
+            border-radius: 4px;
         }
 
         .pricing-header {
             font-family: var(--font-header);
             color: var(--text-bright);
             font-size: 1.8rem;
-            margin-bottom: 40px;
             text-align: center;
             letter-spacing: 4px;
+            margin-bottom: 50px;
         }
 
         .pricing-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
         }
 
         .price-item {
+            background: rgba(255, 255, 255, 0.03);
             padding: 30px;
             border-left: 2px solid var(--accent);
-            background: rgba(255, 255, 255, 0.02);
         }
 
         .price-item h4 {
             font-family: var(--font-header);
             color: var(--accent);
-            margin: 0 0 15px 0;
-            font-size: 1.1rem;
+            margin: 0 0 10px 0;
         }
 
         .price-tag {
             font-family: var(--font-code);
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             color: var(--text-bright);
-            margin-bottom: 10px;
             display: block;
+            margin-bottom: 15px;
         }
 
-        .price-desc {
-            font-family: var(--font-code);
+        .price-list {
+            padding-left: 18px;
+            margin: 0;
             font-size: 0.85rem;
             color: var(--text-steel);
         }
 
-        /* 🔷 行動呼籲 */
-        .footer-cta {
-            text-align: center;
-            margin-top: 100px;
-        }
+        .price-list li { margin-bottom: 8px; }
 
+        .footer-cta { text-align: center; margin-top: 80px; }
         .btn-connect {
             font-family: var(--font-header);
-            padding: 20px 50px;
+            padding: 18px 40px;
             border: 1px solid var(--accent);
             color: var(--accent);
             text-decoration: none;
             display: inline-block;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             font-size: 0.9rem;
         }
+        .btn-connect:hover { background: rgba(100, 255, 218, 0.1); box-shadow: 0 0 20px var(--accent); }
 
-        .btn-connect:hover {
-            background: rgba(100, 255, 218, 0.1);
-            box-shadow: 0 0 20px var(--accent);
-        }
+        footer { padding: 80px 20px; border-top: 1px solid rgba(100, 255, 218, 0.1); }
 
         @media (max-width: 768px) {
-            .pricing-grid { grid-template-columns: 1fr; }
-            h1 { font-size: 2rem; letter-spacing: 5px; }
-            .pricing-section { padding: 30px; }
+            h1 { font-size: 2rem; }
+            .pricing-section { padding: 40px 20px; }
         }
     </style>
 </head>
@@ -220,40 +223,66 @@
     <h1>Our Services</h1>
 
     <div class="services-grid">
-        <div class="service-card" data-num="01">
-            <h3>技術諮詢</h3>
-            <p>針對 AI 導入、硬體開發瓶頸提供專業建議。透過深度對話評估技術可行性，協助規劃最佳開發路徑。</p>
+        <div class="service-card">
+            <h3>01_技術諮詢</h3>
+            <p>可行性評估、初步架構建議、數據預分析討論。協助規劃從概念到落地的最佳開發路徑。</p>
         </div>
-        <div class="service-card" data-num="02">
-            <h3>客戶數據分析</h3>
-            <p>挖掘工業或商業數據背後的價值。利用數值統計與視覺化工具，將原始數據轉化為可執行的決策資訊。</p>
+        <div class="service-card">
+            <h3>02_客戶數據分析</h3>
+            <p>挖掘工業數據價值。利用數值統計與視覺化工具，將原始數據轉化為具備洞察力的決策資訊。</p>
         </div>
-        <div class="service-card" data-num="03">
-            <h3>AI Model 訓練</h3>
-            <p>客製化深度學習模型（如 1D-CNN, ResNet）。針對特定場景（如效能預測、影像識別）進行精度優化。</p>
+        <div class="service-card">
+            <h3>03_AI Model 訓練</h3>
+            <p>客製化深度學習模型（如 1D-CNN, ResNet）。針對特定場景進行精度優化與效能預測。</p>
         </div>
-        <div class="service-card" data-num="04">
-            <h3>UI/UX 應用開發</h3>
-            <p>開發具備專業美感的自動化工具介面。確保複雜的系統操作也能擁有直觀、流暢的使用者體驗。</p>
+        <div class="service-card">
+            <h3>04_UI/UX 應用開發</h3>
+            <p>開發專業自動化工具介面。確保複雜的系統操作也能擁有直觀、流暢的使用者體驗。</p>
         </div>
-        <div class="service-card" data-num="05">
-            <h3>軟硬體整合</h3>
-            <p>打破領域藩籬，整合影像識別系統與機械作動（Ex. 自動化夾取、智能檢測），實現完整的智慧應用。</p>
+        <div class="service-card">
+            <h3>05_軟硬體整合</h3>
+            <p>融合影像識別與機械作動（如自動夾取、智能檢測），打破虛擬與實體邊界。</p>
         </div>
+    </div>
+
+    <!-- 視覺化架構圖 -->
+    <div class="arch-diagram">
+        <img src="../3_Source/Services1.jpeg" alt="Edge Computing Architecture">
+        <span class="arch-tag">// SYSTEM_ARCHITECTURE: FROM_IOT_EDGE_TO_CLOUD</span>
     </div>
 
     <section class="pricing-section">
         <div class="pricing-header">PRICING_MODEL</div>
         <div class="pricing-grid">
+            <!-- 諮詢 -->
             <div class="price-item">
                 <h4>技術諮詢</h4>
-                <span class="price-tag">$0 / Limited Free</span>
-                <p class="price-desc">限時免費。旨在推廣 AI 落地化與異業技術交流，共同探索轉型可能。</p>
+                <span class="price-tag">Conditional Free</span>
+                <ul class="price-list">
+                    <li>需提交技術開發需求書</li>
+                    <li>需具備可分析之數據（CAD/測試資料）</li>
+                    <li>若數據不足則轉入顧問診斷模式</li>
+                </ul>
             </div>
+            <!-- 開發 -->
             <div class="price-item">
-                <h4>開發服務</h4>
-                <span class="price-tag">Project Based</span>
-                <p class="price-desc">依專案範疇與開發階段另行報價（含模型訓練、系統整合等）。</p>
+                <h4>專案開發</h4>
+                <span class="price-tag">Fixed Price</span>
+                <ul class="price-list">
+                    <li>需求確認後提供詳細時程報價</li>
+                    <li>採分階段付款（訂金/Demo/驗收）</li>
+                    <li>含 3-6 個月售後技術支援</li>
+                </ul>
+            </div>
+            <!-- 顧問 -->
+            <div class="price-item">
+                <h4>技術顧問</h4>
+                <span class="price-tag">Retainer Fee</span>
+                <ul class="price-list">
+                    <li>按月或按小時收費（Monthly/Hourly）</li>
+                    <li>系統持續優化與緊急維護</li>
+                    <li>保證優先處理權與文件更新</li>
+                </ul>
             </div>
         </div>
     </section>
